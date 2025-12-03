@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox and Grid</title>
+    <style>
+        .mainContainer{
+            display: flex;
+            flex-direction: column;
+            gap: 5rem;
+        }
+        .container-1{
+            display: flex;
+            justify-content: space-around;
+        }
+        .container-2{
+            display: flex;
+             justify-content: space-around;
+        }
+        .container-3{
+            display: flex;
+             justify-content: space-around;
+        }
+        .box{
+            height: 200px;
+            width: 200px;
+        }
+        .container-1 .box{
+            background-color: red;
+        }
+        .container-2 .box{
+            background-color: green;
+        }
+        .container-3 .box{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="mainContainer">
+        <div class="container-1">
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+        <div class="container-2">
+            <div class="box"></div>
+            <div class="box"></div>
+
+        </div>
+        <div class="container-3">
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+    </div>
+
+</body>
+</html>

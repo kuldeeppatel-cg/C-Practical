@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counter</title>
+    <style>
+        .counter{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            gap: 2rem;
+        }
+      .display{
+        height: 200px;
+        width: 200px;
+        font-size: 50px;
+        border: 1px solid;
+        margin: 0 auto;
+      }
+    </style>
+</head>
+<body>
+    <div class="counter">
+        <div class="display">0</div>
+        <div class="btn">
+            <button id="increase">+</button>
+            <button id="decrease">-</button>
+            <button id="save">save</button>
+        </div>
+    </div>
+
+    <script>
+        const display = document.querySelector(".display");
+        const incBtn = document.querySelector("#increase");
+        const decBtn = document.querySelector("#decrease");
+        const saveBtn = document.querySelector("#save");
+    
+        var counter  = 0;
+
+        function displayContent(){
+            display.textContent = counter;
+            load();
+        }
+        function load(){
+            let temp = localStorage.getItem("save");
+            counter = (temp != null)? temp: 0;
+        }
+   incBtn.addEventListener("click",()=>{
+     counter++;
+     displayContent();
+   })
+   decBtn.addEventListener("click",()=>{
+     counter--;
+     displayContent();
+   })
+   console.log("universal",counter)
+        displayContent();
+
+ saveBtn.addEventListener("click",()=>{
+    localStorage.setItem("save",counter);
+ })       
+    </script>
+</body>
+</html>
